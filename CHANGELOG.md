@@ -1,5 +1,13 @@
 # ChangeLog
 
+## UNRELEASED
+
+### Changed
+
+- 🚨 __BREAKING:__ Mirantis Container Cloud instances using basic authentication are no longer supported. Your instance must now use Keycloak SSO authentication in order to use this extension.
+    - Keycloak-based authentication/authorization is much more secure than basic username/password authentication. Consider migrating your Container Cloud instance to it if you haven't already.
+- The [/addClusters](#protocol---add-multiple-clusters) protocol API no longer supports the `keycloakLogin` option. SSO is now assumed/expected.
+
 ## v2.2.1
 
 Supports Lens `>= 4.2.4`.
