@@ -391,7 +391,7 @@ export const View = function () {
   // SSO authorization redirect/callback
   const handleOauthCodeEvent = useCallback(
     function (event) {
-      rtv.verify({ event }, { event: extEventOauthCodeTs });
+      DEV_ENV && rtv.verify({ event }, { event: extEventOauthCodeTs });
       const { data: oAuth } = event;
 
       if (!oAuth.state && ssoAuthLoading) {

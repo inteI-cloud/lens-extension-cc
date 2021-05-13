@@ -138,6 +138,8 @@ export default class ExtensionRenderer extends LensRendererExtension {
   };
 
   async onActivate() {
+    logger.log('renderer', 'extension activated');
+
     this.protocolHandlers = [
       {
         pathSchema: `/${EXT_EVENT_ACTIVATE_CLUSTER}`,
@@ -159,4 +161,9 @@ export default class ExtensionRenderer extends LensRendererExtension {
 
     await prefStore.loadExtension(this);
   }
+
+  onDeactivate() {
+    logger.log('renderer', 'extension deactivated');
+  }
+
 }
